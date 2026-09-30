@@ -1,0 +1,1999 @@
+@import "tailwindcss";
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #0f172a;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+button:focus,
+button:focus-visible,
+a:focus,
+a:focus-visible,
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible,
+select:focus,
+select:focus-visible {
+  outline: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, 0.25);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: rgba(37, 99, 235, 0.14);
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.94);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-background {
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(219, 234, 254, 0.72),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(237, 233, 254, 0.72),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #f8fbff 0%,
+      #ffffff 58%,
+      #ffffff 100%
+    );
+}
+
+/* =========================================================
+   GRADIENT TEXT
+========================================================= */
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    #2563eb 0%,
+    #4f46e5 48%,
+    #7c3aed 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* =========================================================
+   PREMIUM CARD
+========================================================= */
+
+.premium-card {
+  border: 1px solid #e5e7eb;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  padding: 24px;
+
+  box-shadow:
+    0 4px 16px rgba(15, 23, 42, 0.045);
+
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #dbe3ee;
+
+  box-shadow:
+    0 7px 22px rgba(15, 23, 42, 0.065);
+}
+
+/* =========================================================
+   PREMIUM BUTTON
+========================================================= */
+
+.premium-button {
+  display: inline-flex;
+
+  min-height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 12px;
+
+  padding: 10px 17px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5 55%,
+    #7c3aed
+  );
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  box-shadow:
+    0 8px 18px rgba(37, 99, 235, 0.18);
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease;
+}
+
+.premium-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 22px rgba(37, 99, 235, 0.22);
+}
+
+.premium-button:active {
+  transform: translateY(0);
+}
+
+.premium-button:disabled {
+  opacity: 0.55;
+
+  transform: none;
+}
+
+/* =========================================================
+   PREMIUM BADGE
+========================================================= */
+
+.premium-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  min-height: 32px;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 999px;
+
+  padding: 7px 12px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #1d4ed8;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 3px 10px rgba(37, 99, 235, 0.06);
+}
+
+/* =========================================================
+   ONLINE STATUS
+========================================================= */
+
+.status-online {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  min-height: 32px;
+
+  border: 1px solid #d1fae5;
+
+  border-radius: 999px;
+
+  padding: 6px 11px;
+
+  background: #f0fdf4;
+
+  color: #15803d;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.status-online > span {
+  display: block;
+
+  width: 7px;
+  height: 7px;
+
+  min-width: 7px;
+  min-height: 7px;
+
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+}
+
+/* =========================================================
+   ICON BOX
+========================================================= */
+
+.icon-box {
+  display: flex;
+
+  width: 44px;
+  height: 44px;
+
+  min-width: 44px;
+  min-height: 44px;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+/* =========================================================
+   MAP WORKER MARKER
+========================================================= */
+
+.map-worker-marker {
+  position: absolute;
+
+  display: flex;
+
+  width: 38px;
+  height: 38px;
+
+  min-width: 38px;
+  min-height: 38px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #2563eb;
+
+  line-height: 0;
+
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.map-worker-marker svg {
+  display: block;
+
+  width: 16px;
+  height: 16px;
+
+  min-width: 16px;
+  min-height: 16px;
+
+  flex: 0 0 16px;
+
+  stroke-width: 2.2;
+}
+
+/* =========================================================
+   MAP CENTER MARKER
+========================================================= */
+
+.map-center-marker {
+  position: relative;
+
+  display: flex;
+
+  width: 56px;
+  height: 56px;
+
+  min-width: 56px;
+  min-height: 56px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 4px solid #ffffff;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.25);
+
+  z-index: 2;
+}
+
+.map-center-marker svg {
+  position: relative;
+
+  display: block;
+
+  width: 22px;
+  height: 22px;
+
+  z-index: 3;
+}
+
+/* =========================================================
+   WORKER CARD
+========================================================= */
+
+.worker-card {
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 590px;
+
+  height: 100%;
+}
+
+.worker-card .view-profile-button {
+  width: 100%;
+
+  min-width: 100%;
+
+  height: 52px;
+
+  min-height: 52px;
+
+  max-height: 52px;
+
+  flex-shrink: 0;
+
+  border: 0;
+
+  padding: 0 16px;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.worker-card .view-profile-button svg {
+  display: block;
+
+  width: 17px;
+  height: 17px;
+
+  min-width: 17px;
+  min-height: 17px;
+
+  flex: 0 0 17px;
+}
+
+/* =========================================================
+   DOORSTEP PRICING
+========================================================= */
+
+.pricing-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+
+  width: 100%;
+
+  align-items: stretch;
+}
+
+/* =========================================================
+   PRICING CARD
+========================================================= */
+
+.pricing-card {
+  display: flex;
+
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 86px;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 18px 20px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 16px rgba(15, 23, 42, 0.045);
+
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #bfdbfe;
+
+  box-shadow:
+    0 8px 22px rgba(15, 23, 42, 0.07);
+}
+
+.pricing-card-left {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.pricing-label {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.06em;
+}
+
+.pricing-distance {
+  margin: 6px 0 0;
+
+  color: #0f172a;
+
+  font-size: 15px;
+
+  font-weight: 900;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+.pricing-price {
+  flex-shrink: 0;
+
+  color: #2563eb;
+
+  font-size: 25px;
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   BOOKING INPUT
+========================================================= */
+
+.booking-input {
+  display: block;
+
+  width: 100%;
+
+  height: 42px;
+
+  min-height: 42px;
+
+  border: 1px solid #dbe3ee;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #0f172a;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  line-height: 20px;
+
+  padding-top: 10px;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+
+  outline: none;
+
+  box-shadow: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.booking-input:hover {
+  border-color: #cbd5e1;
+}
+
+.booking-input:focus {
+  border-color: #93c5fd;
+
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.08);
+}
+
+.booking-input::placeholder {
+  color: #94a3b8;
+}
+
+/* =========================================================
+   BOOKING TEXTAREA
+========================================================= */
+
+.booking-textarea {
+  display: block;
+
+  width: 100%;
+
+  min-height: 94px;
+
+  resize: vertical;
+
+  border: 1px solid #dbe3ee;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #0f172a;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  line-height: 20px;
+
+  padding-top: 11px;
+  padding-right: 12px;
+  padding-bottom: 11px;
+  padding-left: 40px;
+
+  outline: none;
+
+  box-shadow: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.booking-textarea:hover {
+  border-color: #cbd5e1;
+}
+
+.booking-textarea:focus {
+  border-color: #93c5fd;
+
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.08);
+}
+
+.booking-textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* =========================================================
+   BOOKING DATE
+========================================================= */
+
+.booking-date-input {
+  color-scheme: light;
+}
+
+.booking-date-input::-webkit-calendar-picker-indicator {
+  width: 15px;
+
+  height: 15px;
+
+  margin: 0;
+
+  opacity: 0.62;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   BOOKING TIME
+========================================================= */
+
+.booking-input[type="time"] {
+  color-scheme: light;
+}
+
+.booking-input[type="time"]::-webkit-calendar-picker-indicator {
+  width: 15px;
+
+  height: 15px;
+
+  margin: 0;
+
+  opacity: 0.62;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   NUMBER INPUT
+========================================================= */
+
+.booking-input[type="number"]::-webkit-inner-spin-button,
+.booking-input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+
+  opacity: 0.55;
+}
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+.booking-input[type="tel"] {
+  letter-spacing: 0.01em;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   CTA SECTION
+========================================================= */
+
+.cta-section {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 210px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  padding: 42px 48px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb 0%,
+      #4f46e5 48%,
+      #7c3aed 100%
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 20px 45px rgba(37, 99, 235, 0.18);
+}
+
+/* =========================================================
+   CTA GLOW
+========================================================= */
+
+.cta-glow {
+  position: absolute;
+
+  right: -80px;
+  top: -100px;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  filter: blur(8px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CTA CONTENT
+========================================================= */
+
+.cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  width: 100%;
+
+  min-height: 126px;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 32px;
+}
+
+/* =========================================================
+   CTA TEXT
+========================================================= */
+
+.cta-text {
+  min-width: 0;
+
+  flex: 1;
+}
+
+/* =========================================================
+   CTA BADGE
+========================================================= */
+
+.cta-small-badge {
+  display: inline-flex;
+
+  min-height: 28px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 999px;
+
+  padding: 5px 10px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.cta-small-badge svg {
+  width: 13px;
+  height: 13px;
+
+  min-width: 13px;
+  min-height: 13px;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   CTA TITLE
+========================================================= */
+
+.cta-title {
+  margin: 14px 0 0;
+
+  color: #ffffff !important;
+
+  font-size: 30px;
+
+  font-weight: 900;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+}
+
+/* =========================================================
+   CTA DESCRIPTION
+========================================================= */
+
+.cta-description {
+  max-width: 580px;
+
+  margin: 10px 0 0;
+
+  color: rgba(255, 255, 255, 0.82) !important;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   GET STARTED BUTTON
+========================================================= */
+
+.cta-get-started {
+  position: relative;
+
+  z-index: 5;
+
+  display: inline-flex !important;
+
+  width: 160px;
+
+  min-width: 160px;
+
+  height: 52px;
+
+  min-height: 52px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  flex-shrink: 0;
+
+  border: 0 !important;
+
+  border-radius: 13px;
+
+  padding: 0 20px;
+
+  background: #ffffff !important;
+
+  color: #1d4ed8 !important;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  text-decoration: none !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.18);
+
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.cta-get-started span {
+  display: inline-block;
+
+  color: #1d4ed8 !important;
+
+  font-size: 14px;
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+.cta-get-started svg {
+  display: block;
+
+  width: 17px;
+  height: 17px;
+
+  min-width: 17px;
+  min-height: 17px;
+
+  flex: 0 0 17px;
+
+  color: #1d4ed8 !important;
+
+  stroke: #1d4ed8 !important;
+
+  opacity: 1 !important;
+}
+
+.cta-get-started:hover {
+  transform: translateY(-2px);
+
+  background: #eff6ff !important;
+
+  color: #1d4ed8 !important;
+
+  box-shadow:
+    0 13px 28px rgba(15, 23, 42, 0.22);
+}
+
+.cta-get-started:hover span,
+.cta-get-started:hover svg {
+  color: #1d4ed8 !important;
+
+  stroke: #1d4ed8 !important;
+}
+
+.cta-get-started:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   CTA MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .cta-section {
+    min-height: 0;
+
+    padding: 32px 24px;
+
+    border-radius: 24px;
+  }
+
+  .cta-content {
+    min-height: 0;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 24px;
+  }
+
+  .cta-title {
+    font-size: 26px;
+  }
+
+  .cta-description {
+    font-size: 12px;
+  }
+
+  .cta-get-started {
+    width: 100%;
+
+    min-width: 100%;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1279px) {
+  .worker-card {
+    min-height: 570px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .premium-card:hover {
+    transform: none;
+  }
+
+  .pricing-card:hover {
+    transform: none;
+  }
+
+  .worker-card {
+    min-height: 570px;
+  }
+}
+
+/* =========================================================
+   MOBILE PRICING
+========================================================= */
+
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .worker-card {
+    min-height: 0;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+  .premium-card {
+    border-radius: 18px;
+
+    padding: 20px;
+  }
+
+  .premium-button {
+    min-height: 44px;
+  }
+
+  .map-worker-marker {
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .map-center-marker {
+    width: 52px;
+    height: 52px;
+
+    min-width: 52px;
+    min-height: 52px;
+  }
+
+  .pricing-card {
+    min-height: 80px;
+
+    padding: 16px 18px;
+
+    border-radius: 16px;
+  }
+
+  .pricing-distance {
+    font-size: 14px;
+  }
+
+  .pricing-price {
+    font-size: 23px;
+  }
+
+  .booking-input {
+    height: 44px;
+
+    min-height: 44px;
+
+    font-size: 12px;
+  }
+
+  .booking-textarea {
+    font-size: 12px;
+  }
+
+  .worker-card .view-profile-button {
+    height: 50px;
+
+    min-height: 50px;
+
+    max-height: 50px;
+  }
+}
+
+/* =========================================================
+   CTA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 28px 20px;
+  }
+
+  .cta-title {
+    font-size: 23px;
+  }
+
+  .cta-get-started {
+    height: 50px;
+
+    min-height: 50px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   SKILL-LINK — COMPLETE DARK MODE
+   Applies to the whole website
+========================================================= */
+
+/* ---------------------------------------------------------
+   MAIN WEBSITE
+--------------------------------------------------------- */
+
+html,
+body,
+#root {
+  background: #070b14 !important;
+  color: #e5e7eb !important;
+}
+
+body {
+  background: #070b14 !important;
+  color: #e5e7eb !important;
+}
+
+/* ---------------------------------------------------------
+   COMMON WHITE BACKGROUNDS
+--------------------------------------------------------- */
+
+.bg-white {
+  background-color: #0b1220 !important;
+}
+
+.bg-white\/80 {
+  background-color: rgba(11, 18, 32, 0.88) !important;
+}
+
+.bg-white\/90 {
+  background-color: rgba(11, 18, 32, 0.94) !important;
+}
+
+.bg-white\/95 {
+  background-color: rgba(11, 18, 32, 0.96) !important;
+}
+
+/* ---------------------------------------------------------
+   SLATE BACKGROUNDS
+--------------------------------------------------------- */
+
+.bg-slate-50 {
+  background-color: #0f172a !important;
+}
+
+.bg-slate-100 {
+  background-color: #172033 !important;
+}
+
+.bg-slate-200 {
+  background-color: #263247 !important;
+}
+
+.bg-slate-950 {
+  background-color: #020617 !important;
+}
+
+/* ---------------------------------------------------------
+   TEXT COLORS
+--------------------------------------------------------- */
+
+.text-slate-900,
+.text-slate-950 {
+  color: #f8fafc !important;
+}
+
+.text-slate-800 {
+  color: #f1f5f9 !important;
+}
+
+.text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+.text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+.text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+.text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+.text-slate-300 {
+  color: #64748b !important;
+}
+
+.text-slate-200 {
+  color: #475569 !important;
+}
+
+/* ---------------------------------------------------------
+   BORDERS
+--------------------------------------------------------- */
+
+.border-slate-100 {
+  border-color: #1e293b !important;
+}
+
+.border-slate-200 {
+  border-color: #263247 !important;
+}
+
+.border-slate-300 {
+  border-color: #334155 !important;
+}
+
+.border-white {
+  border-color: #334155 !important;
+}
+
+.border-white\/10 {
+  border-color: rgba(148, 163, 184, 0.14) !important;
+}
+
+.border-white\/20 {
+  border-color: rgba(148, 163, 184, 0.2) !important;
+}
+
+/* ---------------------------------------------------------
+   NAVBAR
+--------------------------------------------------------- */
+
+.navbar-glass {
+  background: rgba(7, 11, 20, 0.94) !important;
+
+  border-color: #1e293b !important;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------------------------------------------------------
+   HERO
+--------------------------------------------------------- */
+
+.hero-background {
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(37, 99, 235, 0.14),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(124, 58, 237, 0.14),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #070b14 0%,
+      #0b1220 60%,
+      #0f172a 100%
+    ) !important;
+}
+
+/* ---------------------------------------------------------
+   CARDS
+--------------------------------------------------------- */
+
+.premium-card {
+  background: #111827 !important;
+
+  border-color: #263247 !important;
+
+  color: #e5e7eb !important;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.22) !important;
+}
+
+.premium-card:hover {
+  border-color: #334155 !important;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ---------------------------------------------------------
+   WORKER CARDS
+--------------------------------------------------------- */
+
+.worker-card {
+  background: #111827 !important;
+
+  border-color: #263247 !important;
+}
+
+.worker-card .bg-slate-50 {
+  background: #172033 !important;
+}
+
+/* ---------------------------------------------------------
+   SEARCH AREA
+--------------------------------------------------------- */
+
+input,
+textarea,
+select {
+  background-color: #111827 !important;
+
+  color: #f8fafc !important;
+
+  border-color: #334155 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748b !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: #111827 !important;
+
+  color: #ffffff !important;
+
+  border-color: #3b82f6 !important;
+}
+
+/* ---------------------------------------------------------
+   SEARCH CONTAINER
+--------------------------------------------------------- */
+
+form .bg-white {
+  background: #111827 !important;
+}
+
+form {
+  color: #e5e7eb;
+}
+
+/* ---------------------------------------------------------
+   CATEGORY BUTTONS
+--------------------------------------------------------- */
+
+button.bg-slate-100 {
+  background: #172033 !important;
+
+  color: #cbd5e1 !important;
+}
+
+button.bg-slate-100:hover {
+  background: #263247 !important;
+
+  color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------
+   ACTIVE CATEGORY
+--------------------------------------------------------- */
+
+button.bg-slate-900 {
+  background: #2563eb !important;
+
+  color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------
+   STATUS
+--------------------------------------------------------- */
+
+.status-online {
+  background: rgba(20, 83, 45, 0.28) !important;
+
+  border-color: rgba(34, 197, 94, 0.25) !important;
+
+  color: #86efac !important;
+}
+
+/* ---------------------------------------------------------
+   MAP
+--------------------------------------------------------- */
+
+.map-worker-marker {
+  background: #172033 !important;
+
+  border-color: #475569 !important;
+
+  color: #60a5fa !important;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+.map-center-marker {
+  border-color: #172033 !important;
+
+  background: #2563eb !important;
+
+  color: #ffffff !important;
+
+  box-shadow:
+    0 8px 24px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* ---------------------------------------------------------
+   MAP AREA
+--------------------------------------------------------- */
+
+.bg-gradient-to-br {
+  background-color: #111827;
+}
+
+/* ---------------------------------------------------------
+   LOCATION / RATE BOXES
+--------------------------------------------------------- */
+
+.worker-card .bg-slate-50 {
+  background: #172033 !important;
+}
+
+.worker-card .border-slate-100 {
+  border-color: #263247 !important;
+}
+
+/* ---------------------------------------------------------
+   ICON BOX
+--------------------------------------------------------- */
+
+.icon-box {
+  background: rgba(37, 99, 235, 0.13) !important;
+
+  color: #60a5fa !important;
+}
+
+/* ---------------------------------------------------------
+   VIEW PROFILE BUTTON
+--------------------------------------------------------- */
+
+.view-profile-button {
+  background: #2563eb !important;
+
+  color: #ffffff !important;
+}
+
+.view-profile-button:hover {
+  background: #3b82f6 !important;
+
+  color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------
+   HOW IT WORKS
+--------------------------------------------------------- */
+
+#how-it-works {
+  background: #0b1220 !important;
+}
+
+#how-it-works .premium-card {
+  background: #111827 !important;
+
+  border-color: #263247 !important;
+}
+
+#how-it-works .text-slate-100 {
+  color: #1e293b !important;
+}
+
+/* ---------------------------------------------------------
+   SAFETY
+--------------------------------------------------------- */
+
+#safety {
+  background: #020617 !important;
+}
+
+/* ---------------------------------------------------------
+   PRICING
+--------------------------------------------------------- */
+
+#pricing {
+  background: #0f172a !important;
+}
+
+.pricing-card {
+  background: #111827 !important;
+
+  border-color: #263247 !important;
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.25) !important;
+}
+
+.pricing-card:hover {
+  border-color: #334155 !important;
+
+  background: #131d2e !important;
+}
+
+.pricing-distance {
+  color: #f8fafc !important;
+}
+
+.pricing-label {
+  color: #64748b !important;
+}
+
+.pricing-price {
+  color: #60a5fa !important;
+}
+
+/* ---------------------------------------------------------
+   PRICING INFO BOX
+--------------------------------------------------------- */
+
+#pricing .bg-blue-50 {
+  background: rgba(37, 99, 235, 0.1) !important;
+
+  border-color: rgba(59, 130, 246, 0.25) !important;
+}
+
+#pricing .text-blue-800 {
+  color: #93c5fd !important;
+}
+
+/* ---------------------------------------------------------
+   CTA
+--------------------------------------------------------- */
+
+.cta-section {
+  background:
+    linear-gradient(
+      135deg,
+      #1d4ed8 0%,
+      #4338ca 50%,
+      #6d28d9 100%
+    ) !important;
+
+  box-shadow:
+    0 20px 45px rgba(37, 99, 235, 0.2) !important;
+}
+
+/*
+   CTA BUTTON remains bright so it is clearly visible
+   and clickable on dark mode.
+*/
+
+.cta-get-started {
+  background: #ffffff !important;
+
+  color: #1d4ed8 !important;
+}
+
+.cta-get-started span,
+.cta-get-started svg {
+  color: #1d4ed8 !important;
+
+  stroke: #1d4ed8 !important;
+}
+
+.cta-get-started:hover {
+  background: #eff6ff !important;
+
+  color: #1d4ed8 !important;
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+
+footer {
+  background: #070b14 !important;
+
+  border-color: #1e293b !important;
+
+  color: #cbd5e1 !important;
+}
+
+footer .border-slate-100 {
+  border-color: #1e293b !important;
+}
+
+/* ---------------------------------------------------------
+   LOGIN / REGISTER / OTHER PAGES
+--------------------------------------------------------- */
+
+.min-h-screen.bg-slate-50 {
+  background: #070b14 !important;
+}
+
+.min-h-screen.bg-white {
+  background: #070b14 !important;
+}
+
+/* Common cards on other pages */
+
+.bg-white.rounded-xl,
+.bg-white.rounded-2xl,
+.bg-white.rounded-3xl {
+  background: #111827 !important;
+
+  border-color: #263247 !important;
+
+  color: #e5e7eb !important;
+}
+
+/* ---------------------------------------------------------
+   BOOKING PAGES
+--------------------------------------------------------- */
+
+.booking-input,
+.booking-textarea {
+  background: #111827 !important;
+
+  border-color: #334155 !important;
+
+  color: #f8fafc !important;
+}
+
+.booking-input:focus,
+.booking-textarea:focus {
+  background: #111827 !important;
+
+  border-color: #3b82f6 !important;
+
+  color: #ffffff !important;
+}
+
+/* Booking summary */
+
+.bg-slate-50 {
+  background-color: #0f172a !important;
+}
+
+/* ---------------------------------------------------------
+   MY BOOKINGS
+--------------------------------------------------------- */
+
+.bg-gray-50,
+.bg-gray-100 {
+  background: #0f172a !important;
+}
+
+.border-gray-100,
+.border-gray-200 {
+  border-color: #263247 !important;
+}
+
+.text-gray-900 {
+  color: #f8fafc !important;
+}
+
+.text-gray-800 {
+  color: #f1f5f9 !important;
+}
+
+.text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
+.text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+.text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+.text-gray-400 {
+  color: #64748b !important;
+}
+
+/* ---------------------------------------------------------
+   LOGIN / REGISTER
+--------------------------------------------------------- */
+
+.bg-gray-50 {
+  background: #070b14 !important;
+}
+
+.bg-gray-100 {
+  background: #111827 !important;
+}
+
+.border-gray-200 {
+  border-color: #263247 !important;
+}
+
+input.bg-white,
+textarea.bg-white,
+select.bg-white {
+  background: #111827 !important;
+
+  color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------
+   LINKS
+--------------------------------------------------------- */
+
+a.text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+a.text-slate-600:hover {
+  color: #60a5fa !important;
+}
+
+a.text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+/* ---------------------------------------------------------
+   WHITE BUTTONS ON OTHER PAGES
+--------------------------------------------------------- */
+
+button.bg-white {
+  background: #111827 !important;
+
+  color: #e2e8f0 !important;
+
+  border-color: #334155 !important;
+}
+
+button.bg-white:hover {
+  background: #172033 !important;
+
+  color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------
+   DARK BUTTON
+--------------------------------------------------------- */
+
+button.bg-slate-900,
+a.bg-slate-900 {
+  background: #2563eb !important;
+
+  color: #ffffff !important;
+}
+
+button.bg-slate-900:hover,
+a.bg-slate-900:hover {
+  background: #3b82f6 !important;
+
+  color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------
+   MODALS
+--------------------------------------------------------- */
+
+.fixed .bg-white {
+  background: #111827 !important;
+
+  border-color: #263247 !important;
+
+  color: #e5e7eb !important;
+}
+
+/* ---------------------------------------------------------
+   DIVIDERS
+--------------------------------------------------------- */
+
+.divide-slate-100 > :not([hidden]) ~ :not([hidden]),
+.divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #263247 !important;
+}
+
+/* ---------------------------------------------------------
+   MOBILE NAV
+--------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+  .navbar-glass {
+    background: rgba(7, 11, 20, 0.97) !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   DARK MODE MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .pricing-card {
+    background: #111827 !important;
+  }
+
+  .worker-card {
+    background: #111827 !important;
+  }
+
+  .premium-card {
+    background: #111827 !important;
+  }
+}
+
+/* ---------------------------------------------------------
+   REMOVE LIGHT FLASH
+--------------------------------------------------------- */
+
+@media (prefers-color-scheme: light) {
+  html,
+  body {
+    background: #070b14;
+  }
+}
+
+/* =========================================================
+   END DARK MODE
+========================================================= */
